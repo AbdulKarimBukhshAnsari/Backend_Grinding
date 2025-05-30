@@ -31,7 +31,13 @@ const orderSchema = new mongoose.Schema({
     contactNumber : {
         type : Number
     },
-    orderDetail : [orderDetailSchema] 
+    orderDetail : [orderDetailSchema],
+    status : {
+        type : String , 
+        enum : ['Pending' , 'Delivered' ],
+        default : 'Pending',
+        required : true 
+    } 
 
 } , {timestamps : true})
 
